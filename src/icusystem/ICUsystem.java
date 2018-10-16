@@ -19,14 +19,17 @@ public class ICUsystem {
         getconnection();
         firstScreen form = new firstScreen();
         form.setVisible(true);
+        mainMenu main = new mainMenu();
         
         try{
         for (int i=0;i<=100;i++){
         Thread.sleep(30);
         form.percent.setText(Integer.toString(i)+"%");
-        form.progressbar.setValue(i);       
+        form.progressbar.setValue(i); 
+        if(i ==79){Thread.sleep(500);}
         if (i == 100){
         form.setVisible(false);
+        main.setVisible(true);
         }
         }
         
