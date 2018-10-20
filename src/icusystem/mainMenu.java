@@ -182,6 +182,14 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
         jLabel52 = new javax.swing.JLabel();
         total = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
+        nextpage = new javax.swing.JLabel();
+        addpatient1 = new javax.swing.JPanel();
+        exit4 = new javax.swing.JLabel();
+        backpage = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        days = new javax.swing.JTextField();
+        val = new javax.swing.JTextField();
+        val1 = new javax.swing.JTextField();
 
         jMenu1.setText("jMenu1");
 
@@ -432,7 +440,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
             searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchLayout.createSequentialGroup()
                 .addComponent(exit1)
-                .addGap(0, 564, Short.MAX_VALUE))
+                .addGap(0, 580, Short.MAX_VALUE))
         );
 
         mainpanel.add(search, "card3");
@@ -458,7 +466,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
             printreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(printreportLayout.createSequentialGroup()
                 .addComponent(exit2)
-                .addGap(0, 564, Short.MAX_VALUE))
+                .addGap(0, 580, Short.MAX_VALUE))
         );
 
         mainpanel.add(printreport, "card4");
@@ -484,7 +492,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
             calculatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(calculatorLayout.createSequentialGroup()
                 .addComponent(exit3)
-                .addGap(0, 564, Short.MAX_VALUE))
+                .addGap(0, 580, Short.MAX_VALUE))
         );
 
         mainpanel.add(calculator, "card5");
@@ -718,8 +726,20 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
         jLabel52.setText("R");
 
         total.setEditable(false);
+        total.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                totalMouseClicked(evt);
+            }
+        });
 
         jLabel53.setText("Total");
+
+        nextpage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icusystem/icons8_Forward_30px_2.png"))); // NOI18N
+        nextpage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nextpageMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout addpatientLayout = new javax.swing.GroupLayout(addpatient);
         addpatient.setLayout(addpatientLayout);
@@ -739,33 +759,6 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(addpatientLayout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel12))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane5)
-                                            .addComponent(jScrollPane6)
-                                            .addComponent(jScrollPane3))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(addpatientLayout.createSequentialGroup()
-                                                .addComponent(jScrollPane4)
-                                                .addGap(14, 14, 14))
-                                            .addGroup(addpatientLayout.createSequentialGroup()
-                                                .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(addpatientLayout.createSequentialGroup()
-                                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(dateSurgery, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(addpatientLayout.createSequentialGroup()
-                                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(dateSurgery1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 0, Short.MAX_VALUE))))
                                     .addGroup(addpatientLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -793,6 +786,33 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
                                             .addGroup(addpatientLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(reasonWithdrawn, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(addpatientLayout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel12))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane5)
+                                            .addComponent(jScrollPane6)
+                                            .addComponent(jScrollPane3))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(addpatientLayout.createSequentialGroup()
+                                                .addComponent(jScrollPane4)
+                                                .addGap(14, 14, 14))
+                                            .addGroup(addpatientLayout.createSequentialGroup()
+                                                .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(addpatientLayout.createSequentialGroup()
+                                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(dateSurgery, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(addpatientLayout.createSequentialGroup()
+                                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(dateSurgery1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(addpatientLayout.createSequentialGroup()
                                 .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -810,9 +830,9 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
                                         .addComponent(doaIcu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(4, 4, 4)
                                         .addComponent(jLabel4)
-                                        .addGap(12, 12, 12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(timeAdmission, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(5, 5, 5)
+                                        .addGap(7, 7, 7)
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -975,9 +995,11 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
                 .addComponent(jLabel53)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addpatientLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(nextpage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exit))
         );
         addpatientLayout.setVerticalGroup(
@@ -1003,18 +1025,18 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
                         .addGap(31, 31, 31)
                         .addComponent(doaIcu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(addpatientLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel4))
-                    .addGroup(addpatientLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(nextpage, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
                             .addComponent(timeAdmission, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
-                            .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(exit))
-                .addGap(10, 10, 10)
+                            .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(26, 26, 26)
                 .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addpatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1163,6 +1185,69 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
 
         mainpanel.add(addpatient, "card2");
 
+        exit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icusystem/icons8_Cancel_25px_2.png"))); // NOI18N
+        exit4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exit4MouseClicked(evt);
+            }
+        });
+
+        backpage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icusystem/icons8_Back_30px_1.png"))); // NOI18N
+        backpage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backpageMouseClicked(evt);
+            }
+        });
+
+        jLabel54.setText("days");
+
+        days.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                daysMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout addpatient1Layout = new javax.swing.GroupLayout(addpatient1);
+        addpatient1.setLayout(addpatient1Layout);
+        addpatient1Layout.setHorizontalGroup(
+            addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addpatient1Layout.createSequentialGroup()
+                .addGap(0, 931, Short.MAX_VALUE)
+                .addComponent(backpage)
+                .addGap(0, 0, 0)
+                .addComponent(exit4))
+            .addGroup(addpatient1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel54)
+                .addGap(26, 26, 26)
+                .addGroup(addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(days, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(addpatient1Layout.createSequentialGroup()
+                        .addComponent(val, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(val1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        addpatient1Layout.setVerticalGroup(
+            addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addpatient1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(exit4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(backpage, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addGroup(addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(days, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(addpatient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(val, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(val1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 499, Short.MAX_VALUE))
+        );
+
+        mainpanel.add(addpatient1, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1174,8 +1259,8 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
-            .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+            .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+            .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
 
         pack();
@@ -1309,6 +1394,58 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
         // TODO add your handling code here:
     }//GEN-LAST:event_intubationAtActionPerformed
 
+    private void totalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_totalMouseClicked
+    // TODO add your handling code here:
+        int evalue = Integer.valueOf(e.getText());
+        int mvalue = Integer.valueOf(m.getText());
+        int bvalue = Integer.valueOf(b.getText());
+        int rvalue = Integer.valueOf(r.getText());
+        total.setText(String.valueOf(evalue+mvalue+bvalue+rvalue));
+    }//GEN-LAST:event_totalMouseClicked
+
+    private void exit4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exit4MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exit4MouseClicked
+
+    private void nextpageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextpageMouseClicked
+        // TODO add your handling code here:
+        //Remove panels
+        mainpanel.removeAll();
+        mainpanel.repaint();
+        mainpanel.revalidate();
+        //Add panels
+        mainpanel.add(addpatient1);
+        mainpanel.repaint();
+        mainpanel.revalidate();
+    }//GEN-LAST:event_nextpageMouseClicked
+
+    private void backpageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backpageMouseClicked
+        // TODO add your handling code here:
+        //Remove panels
+        mainpanel.removeAll();
+        mainpanel.repaint();
+        mainpanel.revalidate();
+        //Add panels
+        mainpanel.add(addpatient);
+        mainpanel.repaint();
+        mainpanel.revalidate();
+    }//GEN-LAST:event_backpageMouseClicked
+
+    private void daysMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daysMouseExited
+        int daysValue = Integer.valueOf(days.getText());
+        if (daysValue == 1){
+        mainpanel.remove(val1);
+        mainpanel.repaint();
+        mainpanel.validate();
+        }
+        if (daysValue == 2){
+        mainpanel.add(val1);
+        mainpanel.repaint();
+        mainpanel.validate();
+        }
+    }//GEN-LAST:event_daysMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -1370,12 +1507,14 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JLabel addPatient2;
     private javax.swing.JLabel addPatient3;
     private javax.swing.JPanel addpatient;
+    private javax.swing.JPanel addpatient1;
     private javax.swing.JComboBox admittedFrom;
     private javax.swing.JTextField age;
     private javax.swing.JComboBox airwayType;
     private javax.swing.JTextField apache;
     private javax.swing.JTextField apache5;
     private javax.swing.JTextField b;
+    private javax.swing.JLabel backpage;
     private javax.swing.JTextField bmi;
     private javax.swing.JTextField brainScan;
     private javax.swing.JPanel btn_1;
@@ -1391,6 +1530,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JTextField dateReadmission;
     private javax.swing.JTextField dateSurgery;
     private javax.swing.JTextField dateSurgery1;
+    private javax.swing.JTextField days;
     private javax.swing.JTextArea diagnosisPrimary;
     private javax.swing.JTextArea diagnosisPrimary1;
     private javax.swing.JTextArea diagnosisPrimary2;
@@ -1404,6 +1544,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JLabel exit1;
     private javax.swing.JLabel exit2;
     private javax.swing.JLabel exit3;
+    private javax.swing.JLabel exit4;
     private javax.swing.JTextField extubationTime;
     private javax.swing.JTextField height;
     private javax.swing.JTextField hospitalDate;
@@ -1464,6 +1605,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1478,6 +1620,7 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField m;
     private javax.swing.JPanel mainpanel;
+    private javax.swing.JLabel nextpage;
     private javax.swing.JTextField nutRiskScore;
     private javax.swing.JPanel printreport;
     private javax.swing.JTextField qSofa;
@@ -1496,6 +1639,8 @@ PlaceHolder p1,p2,p3,p4,p5,p6;
     private javax.swing.JTextField sofa;
     private javax.swing.JTextField timeAdmission;
     private javax.swing.JTextField total;
+    private javax.swing.JTextField val;
+    private javax.swing.JTextField val1;
     private javax.swing.JComboBox vap;
     private javax.swing.JTextField ventilationDays;
     private javax.swing.JTextField weight;
